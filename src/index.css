@@ -1,0 +1,243 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --color-text-dark: #dee2e6;
+  --color-background-100-dark: #343a40;
+  --color-background-500-dark: #2b3035;
+  --color-background-900-dark: #212529;
+  --color-text-light: #212529;
+  --color-background-100-light: #f8f9fa;
+  --color-background-500-light: #e9ecef;
+  --color-background-900-light: #dee2e6;
+}
+
+* {
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 6.25%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 14rem;
+}
+
+.app {
+  color: var(--color-text-dark);
+  background-color: var(--color-background-900-dark);
+}
+
+.header {
+  height: 10vh;
+  padding: 15rem 30rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15rem;
+}
+
+.main {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15rem;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+}
+
+.section {
+  width: 450rem;
+  padding: 30rem;
+  border-radius: 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  background-color: var(--color-background-500-dark);
+}
+
+.section .label {
+  padding: 0rem 15rem;
+}
+
+.section .input {
+  font-size: 48rem;
+  color: var(--color-text-dark);
+  padding: 5rem 15rem;
+  outline: none;
+  border: none;
+  border-radius: 10rem;
+  background-color: var(--color-background-100-dark);
+}
+
+.section .input[type="number"]::-webkit-outer-spin-button,
+.section .input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.currency-rate {
+  text-align: end;
+  width: 450rem;
+}
+
+.btn {
+  color: var(--color-text-dark);
+  min-width: 45rem;
+  min-height: 45rem;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--color-background-100-dark);
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--color-background-100-dark);
+  background-color: var(--color-text-dark);
+}
+
+.shuffle-currency {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.selected-currency {
+  padding: 15rem;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-background-100-dark);
+  cursor: pointer;
+}
+
+.currencies {
+  width: 100%;
+  max-height: 300rem;
+  padding: 15rem;
+  border-radius: 10rem;
+  position: absolute;
+  bottom: -305rem;
+  left: 0rem;
+  z-index: 10;
+  background-color: var(--color-background-100-dark);
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.dropdown.up .currencies {
+  top: -305rem;
+}
+
+.currency {
+  padding: 15rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.currency:hover {
+  background-color: var(--color-background-500-dark);
+}
+
+.currency.disabled {
+  background-color: var(--color-background-900-dark);
+  cursor: not-allowed;
+}
+
+/* Light theme */
+
+.app.light {
+  color: var(--color-text-light);
+  background-color: var(--color-background-900-light);
+}
+
+.app.light .section {
+  background-color: var(--color-background-500-light);
+}
+
+.app.light .section .input {
+  color: var(--color-text-light);
+  background-color: var(--color-background-100-light);
+}
+
+.app.light .btn {
+  color: var(--color-text-light);
+  background-color: var(--color-background-100-light);
+}
+
+.app.light .btn:hover {
+  color: var(--color-background-100-light);
+  background-color: var(--color-text-light);
+}
+
+.app.light .selected-currency {
+  background-color: var(--color-background-100-light);
+}
+
+.app.light .currencies {
+  background-color: var(--color-background-100-light);
+}
+
+.app.light .currency:hover {
+  background-color: var(--color-background-500-light);
+}
+
+.app.light .currency.disabled {
+  background-color: var(--color-background-900-light);
+}
+
+/* Responsive design */
+
+@media (max-width: 595px) {
+  .section {
+    width: 300rem;
+  }
+
+  .section .input {
+    font-size: 32rem;
+  }
+
+  .currency-rate {
+    width: 300rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .app {
+    padding-top: 15rem;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .section {
+    width: 100%;
+  }
+
+  .section .input {
+    font-size: 32rem;
+  }
+
+  .currency-rate {
+    width: 90%;
+  }
+}
